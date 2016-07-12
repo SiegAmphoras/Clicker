@@ -257,7 +257,7 @@ namespace WeaponsGame.Scenes
 			this.armorTimer.Reset();
 			this.missionEndTime = Engine.ElapsedTime;
 			this.result.Construct();
-			(this.guiManager["missionResultPanel"]["returnButton"] as TextureButton).Clicked += new TextureButton.ClickedEvent(this.ReturnButton_Clicked);
+			(this.guiManager["missionResultPanel"]["returnButton"] as Button).Clicked += new Button.ClickedEvent(this.ReturnButton_Clicked);
 			this.cursorTexture = Renderer.GetTexture("cursor_pointer");
 			this.cursorOffset = new Vector2(0f, 0f);
 		}
@@ -381,10 +381,7 @@ namespace WeaponsGame.Scenes
 							this.enemySlots[i] = null;
 						}
 					}
-					IL_2B4:
 					i++;
-					continue;
-					goto IL_2B4;
 				}
 				try
 				{
