@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfFont xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Font>
+    <Name>Test12</Name>
+    <FontPath>./Content/Fonts/kenvector_future.ttf</FontPath>
+    <Size>12</Size>
+    <CharStart>10</CharStart>
+    <CharEnd>128</CharEnd>
+  </Font>
+  <Font>
+    <Name>Test18</Name>
+    <FontPath>./Content/Fonts/kenvector_future.ttf</FontPath>
+    <Size>18</Size>
+    <CharStart>10</CharStart>
+    <CharEnd>128</CharEnd>
+  </Font>
+  <Font>
+    <Name>Test32</Name>
+    <FontPath>./Content/Fonts/kenvector_future.ttf</FontPath>
+    <Size>32</Size>
+    <CharStart>10</CharStart>
+    <CharEnd>128</CharEnd>
+  </Font>
+  <Font>
+    <Name>Test64</Name>
+    <FontPath>./Content/Fonts/kenvector_future.ttf</FontPath>
+    <Size>64</Size>
+    <CharStart>10</CharStart>
+    <CharEnd>128</CharEnd>
+  </Font>
+</ArrayOfFont>

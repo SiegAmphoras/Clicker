@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CharacterArchetypeStruct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>UndefinedArchetype</Name>
+  <attackRate>3</attackRate>
+  <shotsPerAttack>2</shotsPerAttack>
+  <characterImageSet>en_rus1_ak</characterImageSet>
+  <fireSound>weapon/fire6.wav</fireSound>
+  <baseDamage>3</baseDamage>
+  <pctCritical>0.1</pctCritical>
+  <accuracy>0.75</accuracy>
+  <BaseHealth>200</BaseHealth>
+  <gunshotDelay>0.3</gunshotDelay>
+  <environment>Forest</environment>
+</CharacterArchetypeStruct>
