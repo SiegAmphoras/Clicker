@@ -89,6 +89,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Blueprints\GenericBlueprint2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Blueprints\GenericBlueprint1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Sound\Misc\cloth1.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -339,6 +345,7 @@
     <Compile Include="Game\DamageCounter.cs" />
     <Compile Include="Game\EnvironmentType.cs" />
     <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\Blueprint.cs" />
     <Compile Include="Game\Mission.cs" />
     <Compile Include="Game\MissionReward.cs" />
     <Compile Include="Game\Player.cs" />
@@ -368,6 +375,9 @@
     <Compile Include="UI\TextLabel.cs" />
     <Compile Include="UI\TextureButton.cs" />
     <Compile Include="UI\UIElement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Game\Items\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

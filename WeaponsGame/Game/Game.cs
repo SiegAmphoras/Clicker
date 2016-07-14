@@ -17,16 +17,20 @@ namespace WeaponsGame.Game
 
 		public List<CharacterArchetypeStruct> enemyArchetypes;
 
+        public List<Blueprint> blueprints;
+
 		public Game()
 		{
 			this.missionsAvailable = new List<Mission>();
-			this.enemyArchetypes = new List<CharacterArchetypeStruct>();
-		}
+            this.enemyArchetypes = new List<CharacterArchetypeStruct>();
+		    blueprints= new List<Blueprint>();
+        }
 
 		public void Startup()
 		{
 			this.localPlayer = new Player();
 			this.RegisterArchetypes();
+            RegisterBlueprints();
 			for (int i = 0; i < 4; i++)
 			{
 				this.missionsAvailable.Add(this.GenerateMissions(Engine.rand.Next(5, 20)));
@@ -63,6 +67,18 @@ namespace WeaponsGame.Game
 				this.enemyArchetypes.Add(item);
 			}
 		}
+
+        public void RegisterBlueprints()
+        {
+            string[] files = System.IO.Directory.GetFiles("content/blueprints");
+            string[] array = files;
+            for (int i = 0; i < array.Length; i++)
+            {
+                string path = array[i];
+                Blueprint item = Blueprint.LoadFromFile(path);
+                blueprints.Add(item);
+            }
+        }
 
 		public void PostMissionFinish(bool won)
 		{

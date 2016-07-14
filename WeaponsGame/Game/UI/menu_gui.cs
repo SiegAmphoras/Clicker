@@ -221,15 +221,17 @@ namespace WeaponsGame.Game.UI
             this.rndListBox.tint = new Color4(0.6f, 0.8f, 0.6f, 1f);
             this.rndListBox.Text = "Blueprints";
 
-            for (int i = 0; i < 10; i++ )
+            foreach (Blueprint bloo in Engine.game.blueprints)
             {
-                
                 this.rndListBox.Items.Add(string.Concat(new object[]
 				{
                     // TODO: R&D List
-					"Weapon: AK467",
-					" Cost: ",
-					"100000 g"
+                    bloo.type,
+                    " ",
+                    bloo.name,
+					" $",
+                    bloo.cost,
+					
 				}));
             }
 
