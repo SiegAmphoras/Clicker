@@ -198,7 +198,6 @@ namespace WeaponsGame.Game.UI
 			manager.RegisterPanel(missionListPanel);
 		}
 
-<<<<<<< HEAD
         private void ConstructRndPanel()
         {
             
@@ -236,7 +235,8 @@ namespace WeaponsGame.Game.UI
 
             this.rndPanel.AddControl(this.rndListBox);
             this.manager.RegisterPanel(this.rndPanel);
-=======
+        }
+
         void missionListBox_OnSelectedIndexChanged(MouseButtonEventArgs e)
         {
             Mission mission = Engine.game.missionsAvailable[missionListBox.SelectedIndex];
@@ -250,7 +250,6 @@ namespace WeaponsGame.Game.UI
             {
                 rewardListText.Text += "\n " + r.GetRewardText();
             }
->>>>>>> a3fcd9de0c6f47f8de7bdc0bbf46c2b4455a233c
         }
 
 		private void missionListStartButton_Clicked(MouseButtonEventArgs e)
