@@ -19,12 +19,13 @@ namespace WeaponsGame.Game
         public List<Blueprint> blueprints;
         public List<CharacterCard> Personell;
 
-		public Game()
-		{
-			this.missionsAvailable = new List<Mission>();
+        public Game()
+        {
+            this.missionsAvailable = new List<Mission>();
             this.enemyArchetypes = new List<CharacterArchetypeStruct>();
-		    blueprints= new List<Blueprint>();
+            blueprints = new List<Blueprint>();
             Personell = new List<CharacterCard>();
+        }
 
 		public void Startup()
 		{
