@@ -15,13 +15,10 @@ namespace WeaponsGame.Game
 		public float createTime = 0f;
 
 		public float attackRate = 3f;
-
 		public float lastAttackTime = 0f;
-
 		public float nextAttackTime = 0f;
 
 		public int shotsPerAttack = 2;
-
 		public int shotsFired = 0;
 
 		public bool IsAttacking = false;
@@ -37,17 +34,13 @@ namespace WeaponsGame.Game
 		public bool shouldShowHit = false;
 
 		public float lastHurtTime = 0f;
-
 		public float hurtTime = 0.2f;
 
 		public int baseDamage = 3;
-
 		public float pctCritical = 0.1f;
-
 		public float accuracy = 0.75f;
 
 		public int BaseHealth = 200;
-
 		public int Health;
 
 		public bool IsSpawning = false;
@@ -55,23 +48,16 @@ namespace WeaponsGame.Game
 		private float spawnInterp = 0f;
 
 		public Vector2 cardPosition;
-
 		public Vector2 cardPositionOffset;
 
 		public bool IsDead = false;
-
 		public bool IsFinishedDeath = false;
-
 		public float deathAnimAccel = 0.5f;
-
 		public Vector2 deathVelocity;
-
 		public float deathTime = 0f;
-
 		public float deathDelay = 1f;
 
 		public GLSprite gunshotSprite;
-
 		private Vector2 gunshotOffset = new Vector2(-20f, -28f);
 
 		private Vector2[] gunshotFrames = new Vector2[]
@@ -83,19 +69,16 @@ namespace WeaponsGame.Game
 		};
 
 		private int gunshotSpriteFrame = 0;
-
 		private float gunshotLastFrame = 0f;
-
 		private float gunshotFrameRate = 0.03f;
-
 		public float gunshotDelay = 0.3f;
 
-		private System.Collections.Generic.List<DamageCounter> damageCounters;
+		private List<DamageCounter> damageCounters;
 
-		private System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<System.Drawing.Rectangle, float>> hitBoxes = new System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<System.Drawing.Rectangle, float>>
+		private List<KeyValuePair<Rectangle, float>> hitBoxes = new List<KeyValuePair<Rectangle, float>>
 		{
-			new System.Collections.Generic.KeyValuePair<System.Drawing.Rectangle, float>(new System.Drawing.Rectangle(98, 44, 50, 50), 1.75f),
-			new System.Collections.Generic.KeyValuePair<System.Drawing.Rectangle, float>(new System.Drawing.Rectangle(75, 40, 115, 298), 0.8f)
+			new KeyValuePair<Rectangle, float>(new Rectangle(98, 44, 50, 50), 1.75f),
+			new KeyValuePair<Rectangle, float>(new Rectangle(75, 40, 115, 298), 0.8f)
 		};
 
 		public int slotIndex = 0;
@@ -106,7 +89,7 @@ namespace WeaponsGame.Game
 
 		public CharacterCard()
 		{
-			this.damageCounters = new System.Collections.Generic.List<DamageCounter>();
+			this.damageCounters = new List<DamageCounter>();
 			this.gunshotSprite = new GLSprite(256, 256, Renderer.GetTexture("shot"));
 		}
 
@@ -148,9 +131,9 @@ namespace WeaponsGame.Game
 
 		public virtual void CheckPlayerShot(int damage)
 		{
-			foreach (System.Collections.Generic.KeyValuePair<System.Drawing.Rectangle, float> current in this.hitBoxes)
+			foreach (KeyValuePair<Rectangle, float> current in this.hitBoxes)
 			{
-				System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle((int)this.cardPosition.X + current.Key.X, (int)this.cardPosition.Y + current.Key.Y, current.Key.Width, current.Key.Height);
+				Rectangle rectangle = new Rectangle((int)this.cardPosition.X + current.Key.X, (int)this.cardPosition.Y + current.Key.Y, current.Key.Width, current.Key.Height);
 				if (rectangle.Contains(Engine.input.Mouse.X, Engine.input.Mouse.Y))
 				{
 					this.Hit((int)((float)damage * current.Value));

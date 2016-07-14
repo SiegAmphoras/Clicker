@@ -8,32 +8,48 @@ namespace WeaponsGame.UI
 	{
 		public TextAlignment align = TextAlignment.Left;
 
-		private WeaponsGame.Font font;
+        public bool WrapText = false; //TODO: implement proper line wrapping
 
-		public TextLabel(string name) : base(name)
-		{
-			this.tint = System.Drawing.Color.FromArgb(64, 64, 64);
-			this.Text = "";
-		}
+		public WeaponsGame.Font font;
 
-		public void SetFont(WeaponsGame.Font f)
-		{
-			this.font = f;
-		}
+        public TextLabel(string name)
+            : base(name)
+        {
+            this.tint = System.Drawing.Color.FromArgb(64, 64, 64);
+            this.Text = "";
+        }
 
 		public override void Render()
 		{
-			System.Drawing.Rectangle elementBounds = (base.parent as Panel).elementBounds;
-			Vector2 position = new Vector2((float)elementBounds.X, (float)elementBounds.Y) + this.position;
-			if (this.align == TextAlignment.Right)
-			{
-				position.X -= this.font.MeasureString(this.Text).X;
-			}
-			else if (this.align == TextAlignment.Center)
-			{
-				position.X -= this.font.MeasureString(this.Text).X / 2f;
-			}
-			Renderer.DrawString(this.font, this.Text, position, this.tint);
+			Rectangle elementBounds = (base.parent as Panel).elementBounds;
+
+            string[] lines = Text.Split('\n');
+
+            Vector2 position = new Vector2((float)elementBounds.X, (float)elementBounds.Y) + this.position;
+
+            float lineY = 0;
+
+            foreach (string s in lines)
+            {
+                position = new Vector2((float)elementBounds.X, (float)elementBounds.Y) + this.position;
+                position.Y += lineY;
+
+                Vector2 linesize = font.MeasureString(s);
+
+                if (this.align == TextAlignment.Right)
+                {
+                    position.X -= linesize.X;
+                }
+                else if (this.align == TextAlignment.Center)
+                {
+                    position.X -= linesize.X / 2f;
+                }
+
+                Renderer.DrawString(this.font, s, position, this.tint);
+
+                lineY += font.Size;
+            }
+
 			base.Render();
 		}
 	}

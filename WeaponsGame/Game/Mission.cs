@@ -8,39 +8,46 @@ namespace WeaponsGame.Game
 	{
 		public int level = 1;
 
+        public int enemiesKilled = 0;
 		public int enemyCount = 1;
 
 		public EnvironmentType environment;
 
-		private System.Collections.Generic.List<CharacterArchetypeStruct> archetypes;
+        public List<MissionReward> Rewards;
+
+        public bool DidPlayerWin = false;
+
+		List<CharacterArchetypeStruct> archetypes;
 
 		public Mission()
 		{
-			this.environment = EnvironmentType.Forest;
-			this.archetypes = new System.Collections.Generic.List<CharacterArchetypeStruct>();
-			this.FillArchetypes();
+            Rewards = new List<MissionReward>();
+
+			environment = EnvironmentType.Forest;
+			archetypes = new List<CharacterArchetypeStruct>();
+			FillArchetypes();
 		}
 
 		public void FillArchetypes()
 		{
-			this.archetypes.AddRange((from i in Engine.game.enemyArchetypes
+			archetypes.AddRange((from i in Engine.game.enemyArchetypes
 			where i.environment == this.environment
 			select i).ToArray<CharacterArchetypeStruct>());
 		}
 
 		public CharacterCard[] GenerateMissionRoster()
 		{
-			System.Collections.Generic.List<CharacterCard> list = new System.Collections.Generic.List<CharacterCard>();
-			for (int i = 0; i < this.enemyCount; i++)
+			List<CharacterCard> list = new List<CharacterCard>();
+			for (int i = 0; i < enemyCount; i++)
 			{
-				list.Add(this.archetypes[Engine.rand.Next(0, this.archetypes.Count)].ToCharacterCard());
+				list.Add(archetypes[Engine.rand.Next(0, archetypes.Count)].ToCharacterCard());
 			}
 			return list.ToArray();
 		}
 
 		public int GetSlotCount()
 		{
-			return 1 + (int)System.Math.Floor(System.Math.Pow((double)this.level, 0.64999997615814209) / 3.0);
+			return 1 + (int)System.Math.Floor(System.Math.Pow((double)level, 0.64999997615814209) / 3.0);
 		}
 	}
 }

@@ -18,7 +18,7 @@ namespace WeaponsGame.UI
 
 		private float textPad = 16f;
 
-		private WeaponsGame.Font textFont;
+        public WeaponsGame.Font font;
 
 		public TextAlignment align = TextAlignment.Center;
 
@@ -38,12 +38,7 @@ namespace WeaponsGame.UI
 		{
 			this.Text = "Button";
 			this.bounds = new System.Drawing.Rectangle(0, 0, 100, 50);
-			this.textFont = Renderer.GetFont("Test18");
-		}
-
-		public void SetFont(WeaponsGame.Font f)
-		{
-			this.textFont = f;
+            this.font = Renderer.GetFont("Test18");
 		}
 
 		public override void Update()
@@ -57,17 +52,17 @@ namespace WeaponsGame.UI
 
 		public override void Render()
 		{
-			Vector2 vector = this.textFont.MeasureString(this.Text);
+            Vector2 vector = this.font.MeasureString(this.Text);
 			Vector2 position = this.screenPosition + new Vector2(0f, (float)this.bounds.Height / 2f - vector.Y / 2f);
 			if (this.align != TextAlignment.Left)
 			{
 				if (this.align == TextAlignment.Center)
 				{
-					position.X += (float)this.bounds.Width / 2f - this.textFont.MeasureString(this.Text).X / 2f;
+                    position.X += (float)this.bounds.Width / 2f - this.font.MeasureString(this.Text).X / 2f;
 				}
 				else if (this.align == TextAlignment.Right)
 				{
-					position.X += (float)this.bounds.Width - this.textFont.MeasureString(this.Text).X;
+                    position.X += (float)this.bounds.Width - this.font.MeasureString(this.Text).X;
 				}
 			}
 			string textureName = this.buttonTexture;
@@ -90,7 +85,7 @@ namespace WeaponsGame.UI
 			}
 			Renderer.StartClip(new System.Drawing.Rectangle((int)this.screenPosition.X, (int)this.screenPosition.Y, this.bounds.Width, this.bounds.Height));
 			Renderer.DrawPanel(this.screenPosition.X, this.screenPosition.Y, (float)this.bounds.Width, (float)this.bounds.Height, textureName, this.tint);
-			Renderer.DrawString(this.textFont, this.Text, position, this.textTint);
+            Renderer.DrawString(this.font, this.Text, position, this.textTint);
 			Renderer.EndClip();
 			base.Render();
 		}

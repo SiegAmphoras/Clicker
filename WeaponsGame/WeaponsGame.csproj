@@ -330,6 +330,7 @@
     <Compile Include="FontChar.cs" />
     <Compile Include="Game\ActionTimer.cs" />
     <Compile Include="Game\ActionTimerEventHandler.cs" />
+    <Compile Include="Game\BaseItem.cs" />
     <Compile Include="Game\BaseWeapon.cs" />
     <Compile Include="Game\CharacterArchetypeStruct.cs" />
     <Compile Include="Game\CharacterCard.cs" />
@@ -338,6 +339,7 @@
     <Compile Include="Game\EnvironmentType.cs" />
     <Compile Include="Game\Game.cs" />
     <Compile Include="Game\Mission.cs" />
+    <Compile Include="Game\MissionReward.cs" />
     <Compile Include="Game\Player.cs" />
     <Compile Include="Game\PlayerDamageEvent.cs" />
     <Compile Include="Game\UI\menu_gui.cs" />
