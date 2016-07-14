@@ -339,6 +339,7 @@
     <Compile Include="Game\DamageCounter.cs" />
     <Compile Include="Game\EnvironmentType.cs" />
     <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\Items\Blueprint.cs" />
     <Compile Include="Game\Mission.cs" />
     <Compile Include="Game\MissionReward.cs" />
     <Compile Include="Game\Player.cs" />
