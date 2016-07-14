@@ -33,6 +33,10 @@ namespace WeaponsGame.Game.UI
 
 		private Button missionListStartButton;
 
+        private Panel rndPanel;
+
+        private ListBox rndListBox;
+
 		public menu_gui(GUIManager manager)
 		{
 			this.manager = manager;
@@ -177,6 +181,45 @@ namespace WeaponsGame.Game.UI
 			this.manager.RegisterPanel(this.missionListPanel);
 		}
 
+        private void ConstructRndPanel()
+        {
+            
+            this.rndPanel = new Panel("rndPanel");
+            this.rndPanel.position = new Vector2((float)(Engine.BaseWindow.Width / 6 * 4 - 240), (float)(Engine.BaseWindow.Height / 2 - 160));
+            this.rndPanel.bounds = new System.Drawing.Rectangle(0, 0, 500, 400);
+            this.rndPanel.panelTexture = "panel1";
+            this.rndPanel.DrawBackground = true;
+            this.rndPanel.ShowHotbarControl = true;
+            this.rndPanel.Focusable = true;
+            this.rndPanel.Moveable = true;
+            this.rndPanel.Closable = true;
+            this.rndPanel.Text = "Research & Development";
+            this.rndPanel.tint = new Color4(0.6f, 0.8f, 0.6f, 1f);
+            this.rndPanel.Alpha = 1f;
+            this.rndPanel.titleFont = Renderer.GetFont("Test12");
+
+            this.rndListBox = new ListBox("rndListBox");
+            this.rndListBox.position = new Vector2(0f, (float)this.rndPanel.edgePadding.Y - 50f);
+            this.rndListBox.bounds = new System.Drawing.Rectangle(0, 0, 485, 350);
+            this.rndListBox.tint = new Color4(0.6f, 0.8f, 0.6f, 1f);
+            this.rndListBox.Text = "Blueprints";
+
+            for (int i = 0; i < 10; i++ )
+            {
+                
+                this.rndListBox.Items.Add(string.Concat(new object[]
+				{
+                    // TODO: R&D List
+					"Weapon: AK467",
+					" Cost: ",
+					"100000 g"
+				}));
+            }
+
+            this.rndPanel.AddControl(this.rndListBox);
+            this.manager.RegisterPanel(this.rndPanel);
+        }
+
 		private void missionListStartButton_Clicked(MouseButtonEventArgs e)
 		{
 			if (!e.IsPressed)
@@ -190,6 +233,8 @@ namespace WeaponsGame.Game.UI
 
 		private void rndButton_Clicked(MouseButtonEventArgs e)
 		{
+           // System.Diagnostics.Debug.WriteLine("asdf");
+            this.ConstructRndPanel();
 		}
 
 		private void personnelButton_Clicked(MouseButtonEventArgs e)

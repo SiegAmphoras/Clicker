@@ -55,6 +55,7 @@
     <None Include="App.config" />
     <None Include="Content\Archetypes\en_rus1_ak.at">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Content\Archetypes\en_rus1_mak.at">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
