@@ -66,10 +66,15 @@
     <None Include="Content\Fonts\fonts.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Fonts\Hack-Bold.ttf" />
+    <None Include="Content\Fonts\Hack-Regular.ttf" />
     <None Include="Content\Fonts\kenvector_future.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Fonts\kenvector_future_thin.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Fonts\ProFontWindows.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Sound\hit0.ogg">

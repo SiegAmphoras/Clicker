@@ -225,7 +225,7 @@ namespace WeaponsGame.Game.UI
             {
                 this.rndListBox.Items.Add(string.Concat(new object[]
 				{
-                    // TODO: R&D List
+
                     bloo.type,
                     " ",
                     bloo.name,
