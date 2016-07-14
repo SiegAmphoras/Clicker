@@ -22,11 +22,11 @@ namespace WeaponsGame
 		private Face face;
 
 		[XmlIgnore]
-		public System.Collections.Generic.Dictionary<char, FontChar> charDictionary;
+		public Dictionary<char, FontChar> charDictionary;
 
 		public Font()
 		{
-			this.charDictionary = new System.Collections.Generic.Dictionary<char, FontChar>();
+			this.charDictionary = new Dictionary<char, FontChar>();
 		}
 
 		public void Precache()
@@ -40,7 +40,7 @@ namespace WeaponsGame
 		{
 			int num = this.CharEnd - this.CharStart;
 			int[] array = new int[num];
-			this.charDictionary = new System.Collections.Generic.Dictionary<char, FontChar>();
+			this.charDictionary = new Dictionary<char, FontChar>();
 			GL.GenTextures(num, array);
 			for (int i = 0; i < num; i++)
 			{

@@ -9,7 +9,7 @@ namespace WeaponsGame
 {
 	internal class GUIManager
 	{
-		private System.Collections.Generic.List<Panel> panels;
+		private List<Panel> panels;
 
 		private Panel focusedPanel;
 
@@ -32,7 +32,7 @@ namespace WeaponsGame
 
 		public GUIManager()
 		{
-			this.panels = new System.Collections.Generic.List<Panel>();
+			this.panels = new List<Panel>();
 		}
 
 		public void Mouse_ButtonUp(object sender, MouseButtonEventArgs e)
@@ -101,7 +101,7 @@ namespace WeaponsGame
 
 		public void Update()
 		{
-			System.Collections.Generic.Stack<Panel> stack = new System.Collections.Generic.Stack<Panel>();
+			Stack<Panel> stack = new Stack<Panel>();
 			foreach (Panel panel in this.panels)
 			{
 				panel.Update();

@@ -6,7 +6,7 @@ namespace WeaponsGame
 {
 	public class Audio
 	{
-		private System.Collections.Generic.Dictionary<string, Sound> sounds;
+		private Dictionary<string, Sound> sounds;
 
 		private FMOD.System system;
 
@@ -18,7 +18,7 @@ namespace WeaponsGame
 
 		public Audio()
 		{
-			this.sounds = new System.Collections.Generic.Dictionary<string, Sound>();
+			this.sounds = new Dictionary<string, Sound>();
 			this.CheckFMODResult(Factory.System_Create(ref this.system));
 			this.CheckFMODResult(this.system.init(255, INITFLAGS.NORMAL, (IntPtr)null));
 			this.effectsChannel = new Channel();
@@ -80,7 +80,7 @@ namespace WeaponsGame
 			this.result = res;
 			if (res != RESULT.OK)
 			{
-				System.Console.WriteLine("FMOD ERR:" + res.ToString());
+				Console.WriteLine("FMOD ERR:" + res.ToString());
 			}
 		}
 

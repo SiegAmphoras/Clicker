@@ -6,11 +6,9 @@ namespace WeaponsGame
 	public class GLSprite
 	{
 		public int Width;
-
 		public int Height;
 
 		public int SrcWidth;
-
 		public int SrcHeight;
 
 		public int glTextureID;

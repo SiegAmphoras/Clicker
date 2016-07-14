@@ -13,14 +13,14 @@ namespace WeaponsGame.Game
 
 		public Mission activeMission;
 
-		public System.Collections.Generic.List<Mission> missionsAvailable;
+		public List<Mission> missionsAvailable;
 
-		public System.Collections.Generic.List<CharacterArchetypeStruct> enemyArchetypes;
+		public List<CharacterArchetypeStruct> enemyArchetypes;
 
 		public Game()
 		{
-			this.missionsAvailable = new System.Collections.Generic.List<Mission>();
-			this.enemyArchetypes = new System.Collections.Generic.List<CharacterArchetypeStruct>();
+			this.missionsAvailable = new List<Mission>();
+			this.enemyArchetypes = new List<CharacterArchetypeStruct>();
 		}
 
 		public void Startup()
@@ -43,8 +43,12 @@ namespace WeaponsGame.Game
 			Mission mission = new Mission();
 			mission.level = Engine.rand.Next(1, 20);
 			mission.enemyCount = count;
-			string[] names = System.Enum.GetNames(typeof(EnvironmentType));
-			mission.environment = (EnvironmentType)System.Enum.Parse(typeof(EnvironmentType), names[Engine.rand.Next(1, 3)]);
+			string[] names = Enum.GetNames(typeof(EnvironmentType));
+			mission.environment = (EnvironmentType)Enum.Parse(typeof(EnvironmentType), names[Engine.rand.Next(1, 3)]);
+
+            //TODO: Generate rewards
+            mission.Rewards.Add(new MissionMoneyReward() { RewardName = "Completion Bonus", rewardAmount = mission.level * 500, DisplayReward = true });
+
 			return mission;
 		}
 
@@ -60,8 +64,16 @@ namespace WeaponsGame.Game
 			}
 		}
 
-		public void PostMissionFinish()
+		public void PostMissionFinish(bool won)
 		{
+            if (won)
+            {
+                foreach (MissionReward r in activeMission.Rewards)
+                {
+                    r.GiveReward();
+                }
+            }
+
 			this.missionsAvailable.Add(this.GenerateMissions(Engine.rand.Next(5, 20)));
 		}
 	}

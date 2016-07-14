@@ -1,0 +1,13 @@
+R&D
+Type:  pistol, shotgun, ar, hp, armor...
+Tier:  1,2,3...
+
+is researched: tier 1 researched, tier 2 becomes dropable
+is dropable: can drop at the end of a mission
+is purchaseable: if it shows up in the r&d screen
+
+Cost
+
+researched !drop !purchase,  put tier 2 in drop table
+dropable   !research !purchase
+purchaseable !r !d	

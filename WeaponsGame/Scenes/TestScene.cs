@@ -44,7 +44,7 @@ namespace WeaponsGame.Scenes
 			this.titlepanel.Focusable = false;
 			TextLabel textLabel = new TextLabel("titleLabel");
 			textLabel.position = Vector2.Zero;
-			textLabel.SetFont(Renderer.GetFont("Test64"));
+			textLabel.font = Renderer.GetFont("Test64");
 			textLabel.tint = System.Drawing.Color.White;
 			textLabel.Text = "SpaceStation 5";
 			this.titlepanel.AddControl(textLabel);
@@ -76,7 +76,7 @@ namespace WeaponsGame.Scenes
 				TextLabel textLabel = new TextLabel("text");
 				textLabel.position = Vector2.Zero;
 				textLabel.Text = "abcdefghijklmnopqrstuvwxyz";
-				textLabel.SetFont(Renderer.GetFont("Test18"));
+				textLabel.font = Renderer.GetFont("Test18");
 				panel.AddControl(textLabel);
 				this.guiManager.RegisterPanel(panel);
 			}
