@@ -247,7 +247,7 @@ namespace WeaponsGame
 						}
 						else
 						{
-							Vector2 vector = new Vector2(left.X + fontChar.BitmapPos.X, left.Y + (float)fontChar.BitmapHeight - fontChar.BitmapPos.Y);
+                            Vector2 vector = new Vector2(left.X + fontChar.BitmapPos.X, left.Y - fontChar.BitmapPos.Y + (font.Size / 1.5f));
 							if (c == '\n')
 							{
 								left = new Vector2(position.X, position.Y + (float)fontChar.BitmapHeight * 1.5f * (float)num);

@@ -66,10 +66,19 @@
     <None Include="Content\Fonts\fonts.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Fonts\Hack-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Fonts\Hack-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Fonts\kenvector_future.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Fonts\kenvector_future_thin.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Fonts\ProFontWindows.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Sound\hit0.ogg">
@@ -339,7 +348,8 @@
     <Compile Include="Game\DamageCounter.cs" />
     <Compile Include="Game\EnvironmentType.cs" />
     <Compile Include="Game\Game.cs" />
-    <Compile Include="Game\Items\Blueprint.cs" />
+    <Compile Include="Game\Blueprint.cs" />
+    <Compile Include="Game\Items\BlueprintItem.cs" />
     <Compile Include="Game\Mission.cs" />
     <Compile Include="Game\MissionReward.cs" />
     <Compile Include="Game\Player.cs" />

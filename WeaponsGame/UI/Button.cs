@@ -53,7 +53,7 @@ namespace WeaponsGame.UI
 		public override void Render()
 		{
             Vector2 vector = this.font.MeasureString(this.Text);
-			Vector2 position = this.screenPosition + new Vector2(0f, (float)this.bounds.Height / 2f - vector.Y / 2f);
+			Vector2 position = this.screenPosition + new Vector2(0f, ((float)this.bounds.Height / 2f) - (vector.Y / 2f));
 			if (this.align != TextAlignment.Left)
 			{
 				if (this.align == TextAlignment.Center)

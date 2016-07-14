@@ -23,32 +23,18 @@ namespace WeaponsGame.UI
 		{
 			Rectangle elementBounds = (base.parent as Panel).elementBounds;
 
-            string[] lines = Text.Split('\n');
-
             Vector2 position = new Vector2((float)elementBounds.X, (float)elementBounds.Y) + this.position;
 
-            float lineY = 0;
-
-            foreach (string s in lines)
+            if (this.align == TextAlignment.Right)
             {
-                position = new Vector2((float)elementBounds.X, (float)elementBounds.Y) + this.position;
-                position.Y += lineY;
-
-                Vector2 linesize = font.MeasureString(s);
-
-                if (this.align == TextAlignment.Right)
-                {
-                    position.X -= linesize.X;
-                }
-                else if (this.align == TextAlignment.Center)
-                {
-                    position.X -= linesize.X / 2f;
-                }
-
-                Renderer.DrawString(this.font, s, position, this.tint);
-
-                lineY += font.Size;
+                position.X -= font.MeasureString(Text).X;
             }
+            else if (this.align == TextAlignment.Center)
+            {
+                position.X -= font.MeasureString(Text).X / 2f;
+            }
+
+            Renderer.DrawString(this.font, Text, position, this.tint);
 
 			base.Render();
 		}

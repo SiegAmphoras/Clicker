@@ -48,7 +48,7 @@ namespace WeaponsGame.Scenes
 				"     m: ",
 				Engine.game.missionsAvailable.Count
 			});
-			(this.guiManager["statsPanel"]["statsPersonnelLabel"] as TextLabel).Text = "P: " + 0;
+			(this.guiManager["statsPanel"]["statsPersonnelLabel"] as TextLabel).Text = "P: " + Engine.game.Personell.Count;
 			base.Update();
 		}
 

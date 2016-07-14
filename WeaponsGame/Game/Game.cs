@@ -14,13 +14,16 @@ namespace WeaponsGame.Game
 		public Mission activeMission;
 
 		public List<Mission> missionsAvailable;
-
 		public List<CharacterArchetypeStruct> enemyArchetypes;
+
+        public List<CharacterCard> Personell;
 
 		public Game()
 		{
 			this.missionsAvailable = new List<Mission>();
 			this.enemyArchetypes = new List<CharacterArchetypeStruct>();
+
+            Personell = new List<CharacterCard>();
 		}
 
 		public void Startup()
@@ -48,6 +51,7 @@ namespace WeaponsGame.Game
 
             //TODO: Generate rewards
             mission.Rewards.Add(new MissionMoneyReward() { RewardName = "Completion Bonus", rewardAmount = mission.level * 500, DisplayReward = true });
+            mission.Rewards.Add(new MissionCharacterReward() { quantity = 1, characterTemplate = enemyArchetypes[0] });
 
 			return mission;
 		}

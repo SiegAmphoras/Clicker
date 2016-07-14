@@ -63,4 +63,22 @@ namespace WeaponsGame.Game
             return txt;
         }
     }
+
+    class MissionCharacterReward : MissionReward
+    {
+        public CharacterArchetypeStruct characterTemplate;
+        public int quantity = 1;
+
+        public override void GiveReward()
+        {
+            for (int i = 0; i < quantity; i++) { Engine.game.Personell.Add(characterTemplate.ToCharacterCard()); }
+
+            base.GiveReward();
+        }
+
+        public override string GetRewardText()
+        {
+            return quantity + " x " + characterTemplate.Name;
+        }
+    }
 }
