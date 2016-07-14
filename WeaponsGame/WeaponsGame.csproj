@@ -66,19 +66,10 @@
     <None Include="Content\Fonts\fonts.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Fonts\Hack-Bold.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Content\Fonts\Hack-Regular.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Content\Fonts\kenvector_future.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Fonts\kenvector_future_thin.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Content\Fonts\ProFontWindows.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Sound\hit0.ogg">
@@ -342,14 +333,13 @@
     <Compile Include="Game\ActionTimerEventHandler.cs" />
     <Compile Include="Game\BaseItem.cs" />
     <Compile Include="Game\BaseWeapon.cs" />
+    <Compile Include="Game\Blueprint.cs" />
     <Compile Include="Game\CharacterArchetypeStruct.cs" />
     <Compile Include="Game\CharacterCard.cs" />
     <Compile Include="Game\CharacterDeathEvent.cs" />
     <Compile Include="Game\DamageCounter.cs" />
     <Compile Include="Game\EnvironmentType.cs" />
     <Compile Include="Game\Game.cs" />
-    <Compile Include="Game\Blueprint.cs" />
-    <Compile Include="Game\Items\BlueprintItem.cs" />
     <Compile Include="Game\Mission.cs" />
     <Compile Include="Game\MissionReward.cs" />
     <Compile Include="Game\Player.cs" />
@@ -379,6 +369,9 @@
     <Compile Include="UI\TextLabel.cs" />
     <Compile Include="UI\TextureButton.cs" />
     <Compile Include="UI\UIElement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Game\Items\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

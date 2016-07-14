@@ -46,6 +46,7 @@ namespace WeaponsGame.Game
 		public void StartMission()
 		{
 			this.health = this.baseHealth;
+            armor = baseArmor;
 			this.currentAmmo = this.currentWeapon.baseMagCount;
 		}
 
