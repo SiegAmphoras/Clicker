@@ -237,6 +237,7 @@ namespace WeaponsGame.Game.UI
 
             this.rndPanel.AddControl(this.rndListBox);
             this.manager.RegisterPanel(this.rndPanel);
+            // TODO: add ability to purchase, info screen?
         }
 
         void missionListBox_OnSelectedIndexChanged(MouseButtonEventArgs e)
